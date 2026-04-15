@@ -118,7 +118,14 @@ class MoviesViewController: DefaultViewController {
             
             print(error)
             DispatchQueue.main.async {
-                self.showAlert(message: "Erro ao tentar acessar a página: \(self.currentPage).")
+                
+                switch error {
+                case APIError.taskError:
+                    self.showAlert(message: "Teste sua conexão de internet.")
+                default:
+                    self.showAlert(message: "Erro ao tentar acessar a página: \(self.currentPage).")
+                }
+                
                 self.hideActivity()
             }
         }
