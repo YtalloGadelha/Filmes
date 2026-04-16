@@ -121,7 +121,7 @@ class MoviesViewController: DefaultViewController {
                 
                 switch error {
                 case APIError.taskError:
-                    self.showAlert(message: "Teste sua conexão de internet.")
+                    self.showAlert(message: "Verifique sua conexão de internet.")
                 default:
                     self.showAlert(message: "Erro ao tentar acessar a página: \(self.currentPage).")
                 }
